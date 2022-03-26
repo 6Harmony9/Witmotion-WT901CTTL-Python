@@ -16,4 +16,4 @@ Oh, and if you are on Windos 11, type:
 
 '[System.IO.Ports.SerialPort]::getportnames()'
 
-without the quotation marks to get a list of you COM ports.
+without the quotation marks to get a list of your COM ports.
