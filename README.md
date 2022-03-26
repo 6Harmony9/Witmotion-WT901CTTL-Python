@@ -3,6 +3,7 @@ This is a Python code for Witmotion's WT901CTTL IMU sensor (Acceleromenter, Gyro
 Welcome to my very first project. Ever. Feedback is welcomed. Also let me know if there are any problems. 
 
 Some Important Notes:
+
 This code reads in data from Witmotion's WT901CTTL IMU sensor which can read acceleration, angular velocity, tilt angles, and magnetism(?). It has been tested to work on both Linux and Windows 11.
 
 Please make sure that you have the pyserial library installed. Also make sure that you install all of Witmotion's necessary drivers, too.
