@@ -12,8 +12,8 @@ I reccomend that if the code is to be used in you project, the code should be in
 Be sure to uncomment the print function for specific readouts.
 
 
-Oh, and if you are on Windos 11, type:
+Oh, and if you are on Windows 11, type:
 
 '[System.IO.Ports.SerialPort]::getportnames()'
 
-without the quotation marks to get a list of your COM ports.
+without the quotation marks in Windows Powershell to get a list of your COM ports.
