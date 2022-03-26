@@ -14,6 +14,6 @@ Be sure to uncomment the print function for specific readouts.
 
 Oh, and if you are on Windos 11, type:
 
-[System.IO.Ports.SerialPort]::getportnames()
+'[System.IO.Ports.SerialPort]::getportnames()'
 
 to get a list of you COM ports.
