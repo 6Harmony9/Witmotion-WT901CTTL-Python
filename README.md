@@ -10,3 +10,10 @@ Upon execution, you may find that values from say, for example, tilt angles jump
 I reccomend that if the code is to be used in you project, the code should be integrated into your source code directly in the while loop and not with a separate function. I have tried to use functions but for some reason when I do that, the code has a tendency to hang on startup and read nothing. This problem was significantly worse on Windows 11, but not much of a problem on Linux.
 
 Be sure to uncomment the print function for specific readouts.
+
+
+Oh, and if you are on Windos 11, type:
+
+[System.IO.Ports.SerialPort]::getportnames()
+
+to get a list of you COM ports.
