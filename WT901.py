@@ -34,8 +34,8 @@ while True:
 		
 # Processing. Varaible names based on variables on the Witmotion WT901CTTL datasheet.
 		if len(readData) == 88:
-			StartAdress_1 = int(readData[0:2], 16)
-			StartAdress_A = int(readData[2:4], 16)
+			StartAddress_1 = int(readData[0:2], 16)
+			StartAddress_A = int(readData[2:4], 16)
 			AxL = int(readData[4:6], 16)
 			AxH = int(readData[6:8], 16)
 			AyL = int(readData[8:10], 16)
@@ -46,8 +46,8 @@ while True:
 			TH_A = int(readData[18:20], 16)
 			SUM_A = int(readData[20:22], 16)
 			
-			StartAdress_2 = int(readData[22:24], 16)
-			StartAdress_w = int(readData[24:26], 16)
+			StartAddress_2 = int(readData[22:24], 16)
+			StartAddress_w = int(readData[24:26], 16)
 			wxL = int(readData[26:28], 16)
 			wxH = int(readData[28:30], 16)
 			wyL = int(readData[30:32], 16)
@@ -58,8 +58,8 @@ while True:
 			TH_w = int(readData[40:42], 16)
 			SUM_w = int(readData[42:44], 16)
 			
-			StartAdress_3 = int(readData[44:46], 16)
-			StartAdress_ypr = int(readData[46:48], 16)
+			StartAddress_3 = int(readData[44:46], 16)
+			StartAddress_ypr = int(readData[46:48], 16)
 			RollL = int(readData[48:50], 16)
 			RollH = int(readData[50:52], 16)
 			PitchL = int(readData[52:54], 16)
@@ -70,8 +70,8 @@ while True:
 			VH = int(readData[62:64], 16)
 			SUM_ypr = int(readData[64:66], 16)
 			
-			StartAdress_4 = int(readData[66:68], 16)
-			StartAdress_mag = int(readData[68:70], 16)
+			StartAddress_4 = int(readData[66:68], 16)
+			StartAddress_mag = int(readData[68:70], 16)
 			HxL = int(readData[70:72], 16)
 			HxH = int(readData[72:74], 16)
 			HyL = int(readData[74:76], 16)
