@@ -1,11 +1,12 @@
 # Though more tedious and messy, having all the code as part of the main function loop is more reliable. It appears to start up correctly every time. 
 import serial
 import time
+import numpy as np
 
 # Initial conditions
 ser = serial.Serial()
-#ser.port = '/dev/ttyUSB0' #for linux. Also change the USB# to the correct # if necessary.
-ser.port = 'COM7' 
+ser.port = '/dev/ttyUSB0' #for linux. Also change the USB# to the correct # if necessary.
+#ser.port = 'COM7' 
 ser.baudrate = 9600
 ser.parity = 'N'
 ser.bytesize = 8
@@ -83,34 +84,36 @@ while True:
 			SUM_mag = int(readData[86:88], 16)
 			
 # Acceleration output
-			Ax = float(((AxH<<8)|AxL)/32768.0*16.0)
-			Ay = float(((AyH<<8)|AyL)/32768.0*16.0)
-			Az = float(((AzH<<8)|AzL)/32768.0*16.0)
-			T_A = float(((TH_A<<8)|TL_A)/100.0)
+			Ax = float(np.short((AxH<<8)|AxL)/32768.0*16.0)
+			Ay = float(np.short((AyH<<8)|AyL)/32768.0*16.0)
+			Az = float(np.short((AzH<<8)|AzL)/32768.0*16.0)
+			T_A = float(np.short((TH_A<<8)|TL_A)/100.0)
 			
 # Angular velocity output		
-			Wx = float(((wxH<<8)|wxL)/32768.0*2000.0)
-			Wy = float(((wyH<<8)|wyL)/32768.0*2000.0)
-			Wz = float(((wzH<<8)|wzL)/32768.0*2000.0)
-			T_w = float(((TH_w<<8)|TL_w) /100.0)
+			Wx = float(np.short((wxH<<8)|wxL)/32768.0*2000.0)
+			Wy = float(np.short((wyH<<8)|wyL)/32768.0*2000.0)
+			Wz = float(np.short((wzH<<8)|wzL)/32768.0*2000.0)
+			T_w = float(np.short((TH_w<<8)|TL_w) /100.0)
 			
 # Angle output			
-			Roll = float(((RollH<<8)|RollL)/32768.0*180.0)
-			Pitch = float(((PitchH<<8)|PitchL)/32768*180.0)
-			Yaw = float(((YawH<<8)|YawL)/32768.0*180.0)
+			Roll = float(np.short((RollH<<8)|RollL)/32768.0*180.0)
+			Pitch = float(np.short((PitchH<<8)|PitchL)/32768.0*180.0)
+			Yaw = float(np.short((YawH<<8)|YawL)/32768.0*180.0)
 			
 # Magnetic output
-			Hx = float((HxH<<8)| HxL)
-			Hy = float((HyH<<8)| HyL)
-			Hz = float((HzH<<8)| HzL)
-			T_mag = float(((TH_mag<<8)|TL_mag) /100.0)
+			Hx = float(np.short(HxH<<8)| HxL)
+			Hy = float(np.short(HyH<<8)| HyL)
+			Hz = float(np.short(HzH<<8)| HzL)
+			T_mag = float(np.short((TH_mag<<8)|TL_mag) /100.0)
 
 # Readable outputs. Uncomment for specific readouts. 
 			#print(readData)
-			#print("%7f" % Ax, "%7f" % Ay, "%7f" % Az)
-			#print("%7f" % Wx, "%7f" % Wy, "%7f" % Wz)
-			print("%7f" % Roll, "%7f" % Pitch, "%7f" % Yaw)
-			#print("%7f" % Hx, "%7f" % Hy, "%7f" % Hz)
+			#print("%6.3f" % Ax, "%6.3f" % Ay, "%6.3f" % Az)
+			print("%7.3f" % Wx, "%7.3f" % Wy, "%7.3f" % Wz) # This detects any movement on the axes.
+			#print("%7.3f" % Roll, "%7.3f" % Pitch, "%7.3f" % Yaw) # This maps out tilt angles of the axes.
+			#print("%4.0f" % Hx, "%4.0f" % Hy, "%4.0f" % Hz)
 # Cleanup
 			readData = ""
 			dataStartRecording = False
+
+	
