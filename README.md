@@ -1,4 +1,4 @@
-# Witmotion-WT901CTTL-Python
+# Witmotion WT901C TTL Python
 This is a Python code for Witmotion's WT901CTTL IMU sensor (Acceleromenter, Gyroscope, and Magnetometer)
 Welcome to my very first project. Ever. Feedback is welcomed. Also let me know if there are any problems. 
 
