@@ -22,4 +22,4 @@ Oh, and if you are on Windows 11, type:
 without the quotation marks into Windows Powershell to get a list of your COM ports.
 
 
-*This is project is still work in progress.*
+*So far, so good!*
