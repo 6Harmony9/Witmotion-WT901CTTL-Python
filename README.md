@@ -11,3 +11,5 @@ Please make sure that you have the pyserial installed. Also make sure that the p
 If you are on Windows 11 and do not know which COM port is being used by the IMU, go to the Device Manager and open the tab Ports(COM & LPT). Under that you will find USB-SERIAL CH430 and a COM port that it is using. This is likely going to be the only USB serial device utilizing the CH430 chip you have connected to your Windows 11 computer.
 
 Be sure to comment/uncomment the print functions for specific readouts.
+
+This code utilizes basic libraries in order for it to work on Python 3.6, and ultimately, the Nvidia Jetson Nano.
